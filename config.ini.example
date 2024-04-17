@@ -1,0 +1,75 @@
+[common]
+data_folder = ./data
+result_folder = ./result
+n_iter = 15
+tol = 0.1
+logfile = ./run.log
+show_graph = no
+random_seed = 8192
+lantern_responses_csv_files_prefix = # set the prefix of the csv files containing the responses
+curriculum_id = # id of the LanternCurriculum you want to filter for
+
+[inference]
+data_folder = ${common:data_folder}
+result_folder = ${common:result_folder}
+show_graph = ${common:show_graph}
+logfile = ${common:logfile}
+random_seed = ${common:random_seed}
+
+# set the following for each run if needed
+granularity_col = dummy
+n_iter = 15
+tol = 0.1
+infer_mastery = yes
+infer_item = yes
+is_benchmark = no
+min_obs = 10
+split_ratio = 0.2
+
+[difficulty_extension]
+data_folder = ${common:data_folder}
+result_folder = ${common:result_folder}
+show_graph = ${common:show_graph}
+logfile = ${common:logfile}
+
+# set the following for each run if needed
+regression_granularity = grade_strand_id
+min_obs = 10
+f_pvalue_threshod = 1.5
+
+
+
+[knowledge_graph]
+data_folder = ${common:data_folder}
+result_folder = ${common:result_folder}
+show_graph = ${common:show_graph}
+logfile = ${common:logfile}
+
+# set the following for each run if needed
+min_obs = 30
+use_enriched = no
+test_frequency_cap = 10
+
+[soft_prerequisite]
+data_folder = ${common:data_folder}
+result_folder = ${common:result_folder}
+show_graph = ${common:show_graph}
+logfile = ${common:logfile}
+
+# set the following for each run if needed
+n_grid = 11
+grid_width = 2.0
+n_sim = 500
+n_run = 20
+stability_threshold = 0.15
+
+[sana_simulation]
+data_folder = ${common:data_folder}
+result_folder = simulation all settings 3
+show_graph = ${common:show_graph}
+logfile = ${common:logfile}
+
+n_runs = 5
+n_steps = 250
+catalog_file = Content_report_Lantern_Graph.tsv
+catalog_name = dummy_catalog

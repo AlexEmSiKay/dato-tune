@@ -1,0 +1,16 @@
+# setup 
+.venv
+.python-version
+.envrc
+
+# cache
+__pycache__
+
+# instance specific
+data
+config.ini
+run.log
+result
+
+# VSCode
+.vscode
